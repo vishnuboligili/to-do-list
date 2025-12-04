@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css"; // <-- important
 
-const API_URL = "http://localhost:5000/todos";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function App() {
   const [todos, setTodos] = useState([]);
