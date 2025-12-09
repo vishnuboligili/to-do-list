@@ -14,7 +14,10 @@ function App() {
   };
 
   useEffect(() => {
-    fetchTodos();
+    const getTodos=async()=>{
+      await fetchTodos();
+    }
+    getTodos();
   }, []);
 
   const addTodo = async () => {
@@ -24,7 +27,9 @@ function App() {
     fetchTodos();
   };
 
+  
   const deleteTodo = async (id) => {
+  
     await axios.delete(`${API_URL}/${id}`);
     fetchTodos();
   };
